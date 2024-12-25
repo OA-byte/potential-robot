@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <primes.h>
 
 char *iarr_to_str(char *buf, int *iarr, int ialen) {
     bool first = true;
@@ -48,6 +49,7 @@ int *prime_factors(int *buffer, int *factors, int num) {
     *factors += 1;
     return buffer;
 }
+
 
 int main() {
     char printbuf[128];

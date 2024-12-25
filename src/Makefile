@@ -1,8 +1,20 @@
-program: main.c
-	gcc -c src/primes.c -o lib/primes.o
-	gcc src/main.c lib/primes.o -o bin/program
+CC = gcc
+bin = ../bin
+include = ../include
+lib = ../lib
+
+$(bin)/program: main.c $(include)/primes.h $(lib)/primes.o
+	$(CC) -o $(bin)/program main.c $(lib)primes.o -I$(include)
+
+$(lib)/primes.o: primes.c $(include)/primes.h
+	$(CC) -o $(lib)/primes.o -c primes.c -I$(include)
 	
 clean:
-	rm -f lib/primes.o bin/program
+		rm -f $(lib)/*.o
+		rm -f $(bin)/main
+	
+	
+	
+
 	
 	
